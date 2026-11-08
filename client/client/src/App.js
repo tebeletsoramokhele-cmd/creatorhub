@@ -3,9 +3,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import CreatorDashboard from "./components/CreatorDashboard";
 
-const API_URL = "http://localhost:5000/api/content";
-const AUTH_URL = "http://localhost:5000/api/auth";
-
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000/api/content";
+const AUTH_URL = process.env.REACT_APP_AUTH_URL || "http://localhost:5000/api/auth";
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
